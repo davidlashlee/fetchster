@@ -1,0 +1,16 @@
+{
+  "name": "fetcher",
+  "version": "1.0.0",
+  "description": "Convience wrapper for browser fetch api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fetch",
+    "ajax",
+    "javascript"
+  ],
+  "author": "David Lashlee",
+  "license": "MIT"
+}
