@@ -1,7 +1,5 @@
 export default class Fetcher {
-    /**
-     * @returns  "Promise" get a promise back from fetch API. Contains status code which is used to either reject or resolve the promise
-     */
+  
     static _checkStatus(response) {
         if (response.ok) {
             return response
