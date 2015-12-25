@@ -31,7 +31,7 @@ export default class Fetchster {
     }
 
     static get(url, options, errorHandler) {
-      return this._fetch("get", url, urlParams, options, errorHandler)
+      return this._fetch("get", url, options, errorHandler)
     }
 
     static put(url, options, errorHandler) {

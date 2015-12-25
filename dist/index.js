@@ -59,7 +59,7 @@ var Fetchster = (function () {
   }, {
     key: 'get',
     value: function get(url, options, errorHandler) {
-      return this._fetch("get", url, urlParams, options, errorHandler);
+      return this._fetch("get", url, options, errorHandler);
     }
   }, {
     key: 'put',
