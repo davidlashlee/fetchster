@@ -16,7 +16,7 @@ export default class Fetchster {
 
     static _fetch(method, url, options = {headers: {'Content-Type': 'application/json'}}, errorHandler = _errorHandler) {
       option.method = method;
-      return fetch(url, options).then(result => Fetchster._checkStatus(result))
+      return fetch(url, options).then(result => this._checkStatus(result))
           .then(result => result.json())
           .catch(err => errorHandler(err));
     }
@@ -31,23 +31,23 @@ export default class Fetchster {
     }
 
     static get(url, options, errorHandler) {
-      return _fetch("get", url, urlParams, options, errorHandler)
+      return this._fetch("get", url, urlParams, options, errorHandler)
     }
 
     static put(url, options, errorHandler) {
-      return _fetch("put", url, options, errorHandler)
+      return this._fetch("put", url, options, errorHandler)
     }
 
     static post(url, body, options = {headers: {'Content-Type': 'application/json'}}, errorHandler) {
       options.body = JSON.stringify(body)
-      return _fetch("post", url, options, errorHandler)
+      return this._fetch("post", url, options, errorHandler)
     }
 
     static delete(url, options, errorHandler) {
-      return _fetch("delete", url, options, errorHandler)
+      return this._fetch("delete", url, options, errorHandler)
     }
 
     static head(url, options, errorHandler) {
-      return _fetch("head", url, options, errorHandler)
+      return this._fetch("head", url, options, errorHandler)
     }
 };
