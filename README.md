@@ -17,7 +17,7 @@ import Fetchster via require or es6 module loading
 ```js
  Fetchster = require('fetchster')
 
- Fetchster.get(posts/3).then((data) => {console.log(data)})
+ Fetchster.get('posts/3').then((data) => {console.log(data)})
 ```
 
 
