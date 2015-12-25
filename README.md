@@ -4,7 +4,7 @@ Fetch wrapper for easy promise based http requests
 ## Installation
 
 ```bash
-$ npm install express
+$ npm install fetchster
 ```
 import Fetchster via require or es6 module loading
 
