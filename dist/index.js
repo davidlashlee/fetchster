@@ -32,12 +32,14 @@ var Fetchster = (function () {
   }, {
     key: '_fetch',
     value: function _fetch(method, url) {
+      var _this = this;
+
       var options = arguments.length <= 2 || arguments[2] === undefined ? { headers: { 'Content-Type': 'application/json' } } : arguments[2];
       var errorHandler = arguments.length <= 3 || arguments[3] === undefined ? _errorHandler : arguments[3];
 
       option.method = method;
       return fetch(url, options).then(function (result) {
-        return Fetchster._checkStatus(result);
+        return _this._checkStatus(result);
       }).then(function (result) {
         return result.json();
       }).catch(function (err) {
@@ -57,12 +59,12 @@ var Fetchster = (function () {
   }, {
     key: 'get',
     value: function get(url, options, errorHandler) {
-      return _fetch("get", url, urlParams, options, errorHandler);
+      return this._fetch("get", url, urlParams, options, errorHandler);
     }
   }, {
     key: 'put',
     value: function put(url, options, errorHandler) {
-      return _fetch("put", url, options, errorHandler);
+      return this._fetch("put", url, options, errorHandler);
     }
   }, {
     key: 'post',
@@ -71,17 +73,17 @@ var Fetchster = (function () {
       var errorHandler = arguments[3];
 
       options.body = JSON.stringify(body);
-      return _fetch("post", url, options, errorHandler);
+      return this._fetch("post", url, options, errorHandler);
     }
   }, {
     key: 'delete',
     value: function _delete(url, options, errorHandler) {
-      return _fetch("delete", url, options, errorHandler);
+      return this._fetch("delete", url, options, errorHandler);
     }
   }, {
     key: 'head',
     value: function head(url, options, errorHandler) {
-      return _fetch("head", url, options, errorHandler);
+      return this._fetch("head", url, options, errorHandler);
     }
   }]);
 
