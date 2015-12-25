@@ -37,7 +37,7 @@ var Fetchster = (function () {
       var options = arguments.length <= 2 || arguments[2] === undefined ? { headers: { 'Content-Type': 'application/json' } } : arguments[2];
       var errorHandler = arguments.length <= 3 || arguments[3] === undefined ? this._errorHandler : arguments[3];
 
-      option.method = method;
+      options.method = method;
       return fetch(url, options).then(function (result) {
         return _this._checkStatus(result);
       }).then(function (result) {

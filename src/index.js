@@ -15,7 +15,7 @@ export default class Fetchster {
     }
 
     static _fetch(method, url, options = {headers: {'Content-Type': 'application/json'}}, errorHandler = this._errorHandler) {
-      option.method = method;
+      options.method = method;
       return fetch(url, options).then(result => this._checkStatus(result))
           .then(result => result.json())
           .catch(err => errorHandler(err));
