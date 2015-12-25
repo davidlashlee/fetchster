@@ -1,32 +1,45 @@
-# fetchster
+# Fetchster
 Fetch wrapper for easy promise based http requests
 
-import Fetcher via require or es6 module loading
+## Installation
 
-```require Fetcher = "Fetcher"```
+```bash
+$ npm install express
+```
+import Fetchster via require or es6 module loading
 
-```import Fetcher from "Fetcher"```
+```require Fetchster = "fetchster"```
+
+```import Fetchster from "fetchster"```
+
+
+## Example
+```js
+ Fetchster = require('fetchster')
+
+ Fetchster.get(posts/3).then((data) => {console.log(data)})
+```
 
 
 HTTP methods supported - get, post, put, delete, head
 
-additionally Fetcher comes with a utility function that converts an object into a string of query params.
+additionally Fetchster comes with a utility function that converts an object into a string of query params.
 
-Fetcher.seralize(queryParams)
+Fetchster.seralize(queryParams)
 - *required* OBJECT object containing query params in the format {key: value, otherKey: otherValue}
 
 ```=> "key=value&otherKey=otherValue"```
 
 GET
 
-Fetcher.get(url, options, errorHandler)
+Fetchster.get(url, options, errorHandler)
 - *required* STRING url - url of api to hit
 - *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
 - *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
 
 POST
 
-Fetcher.post(url, data, options, errorHandler)
+Fetchster.post(url, data, options, errorHandler)
 - *required* STRING url - url of api to hit
 - *required* OBJECT data - object that contains all the information you want to send on the post body
 - *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
@@ -34,7 +47,7 @@ Fetcher.post(url, data, options, errorHandler)
 
 PUT
 
-Fetcher.put(url, data, options, errorHandler)
+Fetchster.put(url, data, options, errorHandler)
 - *required* STRING url - url of api to hit
 - *required* OBJECT data - object that contains all the information you want to send on the post body
 - *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
@@ -42,14 +55,14 @@ Fetcher.put(url, data, options, errorHandler)
 
 DELETE
 
-Fetcher.delete(url, options, errorHandler)
+Fetchster.delete(url, options, errorHandler)
 - *required* STRING url - url of api to hit
 - *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
 - *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
 
 HEAD
 
-Fetcher.head(url, options, errorHandler)
+Fetchster.head(url, options, errorHandler)
 - *required* STRING url - url of api to hit
 - *required* OBJECT data - object that contains all the information you want to send on the post body
 - *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
