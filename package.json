@@ -1,7 +1,14 @@
 {
   "name": "fetchster",
   "version": "1.0.7",
-  "github": "https://github.com/davidlashlee/fetchster",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidlashlee/fetchster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidlashlee/fetchster/issues"
+  },
+  "homepage": "https://github.com/davidlashlee/fetchster",
   "description": "fetch wrapper for easy promise based http requests",
   "main": "dist/index.js",
   "scripts": {
