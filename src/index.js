@@ -1,5 +1,5 @@
-export default class Fetcher {
-  
+export default class Fetchster {
+
     static _checkStatus(response) {
         if (response.ok) {
             return response
@@ -16,7 +16,7 @@ export default class Fetcher {
 
     static _fetch(method, url, options = {headers: {'Content-Type': 'application/json'}}, errorHandler = _errorHandler) {
       option.method = method;
-      return fetch(url, options).then(result => Fetcher._checkStatus(result))
+      return fetch(url, options).then(result => Fetchster._checkStatus(result))
           .then(result => result.json())
           .catch(err => errorHandler(err));
     }

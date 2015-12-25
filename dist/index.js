@@ -8,17 +8,13 @@ Object.defineProperty(exports, "__esModule", {
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Fetcher = (function () {
-  function Fetcher() {
-    _classCallCheck(this, Fetcher);
+var Fetchster = (function () {
+  function Fetchster() {
+    _classCallCheck(this, Fetchster);
   }
 
-  _createClass(Fetcher, null, [{
+  _createClass(Fetchster, null, [{
     key: '_checkStatus',
-
-    /**
-     * @returns  "Promise" get a promise back from fetch API. Contains status code which is used to either reject or resolve the promise
-     */
     value: function _checkStatus(response) {
       if (response.ok) {
         return response;
@@ -41,7 +37,7 @@ var Fetcher = (function () {
 
       option.method = method;
       return fetch(url, options).then(function (result) {
-        return Fetcher._checkStatus(result);
+        return Fetchster._checkStatus(result);
       }).then(function (result) {
         return result.json();
       }).catch(function (err) {
@@ -89,8 +85,8 @@ var Fetcher = (function () {
     }
   }]);
 
-  return Fetcher;
+  return Fetchster;
 })();
 
-exports.default = Fetcher;
+exports.default = Fetchster;
 ;
