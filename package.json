@@ -1,8 +1,8 @@
 {
-  "name": "fetcher",
+  "name": "fetchster",
   "version": "1.0.0",
-  "description": "Convience wrapper for browser fetch api",
-  "main": "src/index.js",
+  "description": "fetch wrapper for easy promise based http requests",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d dist"
