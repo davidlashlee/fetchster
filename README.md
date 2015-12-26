@@ -25,10 +25,15 @@ HTTP methods supported - get, post, put, delete, head
 
 additionally Fetchster comes with a utility function that converts an object into a string of query params.
 
+```js
+var queryParams = {page: 3, resultsPerPage: 30, sort: "asscending"}
+Fetchster.seralize(queryParams)
+=> "page=3&resultsPerPage=30&sort=asscending"
+```
+
 Fetchster.seralize(queryParams)
 - *required* OBJECT object containing query params in the format {key: value, otherKey: otherValue}
 
-```=> "key=value&otherKey=otherValue"```
 
 GET
 
