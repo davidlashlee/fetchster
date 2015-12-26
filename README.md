@@ -27,8 +27,8 @@ additionally Fetchster comes with a utility function that converts an object int
 
 ```js
 var queryParams = {page: 3, resultsPerPage: 30, sort: "asscending"}
-Fetchster.seralize(queryParams)
-=> "page=3&resultsPerPage=30&sort=asscending"
+var sample = Fetchster.seralize(queryParams)
+console.log(sample) //=> "page=3&resultsPerPage=30&sort=asscending"
 ```
 
 Fetchster.seralize(queryParams)
