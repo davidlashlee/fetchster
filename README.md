@@ -31,9 +31,9 @@ Fetchster.seralize(queryParams)
 GET, DELETE
 
 ```js
- Fetchster = require('fetchster')
+...
 
- Fetchster.get('http://someapi.org/posts/3').then((data) => {console.log(data)})
+ Fetchster.get('http://someapi.org/posts/3').then((response) => {console.log(response)})
 ```
 
 ```js
@@ -51,6 +51,22 @@ Fetchster.delete(url, options, errorHandler)
 - *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
 
 POST, PUT, HEAD
+
+```js
+ ...
+ 
+ var body = {sticks: 3, hipster: "dan"}
+ 
+ Fetchster.post('http://someapi.co/hipsters', body).then((response) => console.log(response)}
+ 
+ var body = {name: "dan", hasDog: true}
+ 
+ Fetchster.put('http://someapi.co/hipsters/1', body).then((response) => console.log(response)}
+ 
+ var body = {name: "dan"}
+ 
+  Fetchster.put('http://someapi.co/hipsters', body).then((response) => console.log(response)}
+```
 
 Fetchster.post(url, data, options, errorHandler)
 
