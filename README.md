@@ -42,6 +42,10 @@ GET, DELETE
  Fetchster.delete('http://someapi.org/posts/3').then((response) => {console.log(response)})
 ```
 
+Fetchster.get(url, options, errorHandler)
+
+Fetchster.delete(url, options, errorHandler)
+
 - *required* STRING url - url of api to hit
 - *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
 - *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
