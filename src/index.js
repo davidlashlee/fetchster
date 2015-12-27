@@ -34,7 +34,8 @@ export default class Fetchster {
       return this._fetch("get", url, options, errorHandler)
     }
 
-    static put(url, options, errorHandler) {
+    static put(url, body, options = {headers: {'Content-Type': 'application/json'}}, errorHandler) {
+      options.body = JSON.stringify(body)
       return this._fetch("put", url, options, errorHandler)
     }
 
@@ -43,7 +44,8 @@ export default class Fetchster {
       return this._fetch("post", url, options, errorHandler)
     }
 
-    static delete(url, options, errorHandler) {
+    static delete(url, body, options = {headers: {'Content-Type': 'application/json'}}, errorHandler) {
+      options.body = JSON.stringify(body)
       return this._fetch("delete", url, options, errorHandler)
     }
 
