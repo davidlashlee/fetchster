@@ -13,14 +13,6 @@ import Fetchster via require or es6 module loading
 ```import Fetchster from "fetchster"```
 
 
-## Example
-```js
- Fetchster = require('fetchster')
-
- Fetchster.get('posts/3').then((data) => {console.log(data)})
-```
-
-
 HTTP methods supported - get, post, put, delete, head
 
 additionally Fetchster comes with a utility function that converts an object into a string of query params.
@@ -38,9 +30,17 @@ Fetchster.seralize(queryParams)
 
 GET, DELETE
 
-Fetchster.get(url, options, errorHandler)
+```js
+ Fetchster = require('fetchster')
 
-Fetchster.delete(url, options, errorHandler)
+ Fetchster.get('http://someapi.org/posts/3').then((data) => {console.log(data)})
+```
+
+```js
+ Fetchster = require('fetchster')
+
+ Fetchster.delete('http://someapi.org/posts/3').then((response) => {console.log(response)})
+```
 
 - *required* STRING url - url of api to hit
 - *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
