@@ -39,6 +39,7 @@ Fetchster.seralize(queryParams)
 GET, DELETE
 
 Fetchster.get(url, options, errorHandler)
+
 Fetchster.delete(url, options, errorHandler)
 
 - *required* STRING url - url of api to hit
@@ -48,7 +49,9 @@ Fetchster.delete(url, options, errorHandler)
 POST, PUT, HEAD
 
 Fetchster.post(url, data, options, errorHandler)
+
 Fetchster.put(url, data, options, errorHandler)
+
 Fetchster.head(url,data, options, errorHandler)
 
 - *required* STRING url - url of api to hit
