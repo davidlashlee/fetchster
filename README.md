@@ -34,41 +34,25 @@ console.log(sample) //=> "page=3&resultsPerPage=30&sort=asscending"
 Fetchster.seralize(queryParams)
 - *required* OBJECT object containing query params in the format {key: value, otherKey: otherValue}
 
+## http methods
 
-GET
+GET, DELETE
 
 Fetchster.get(url, options, errorHandler)
+Fetchster.delete(url, options, errorHandler)
+
 - *required* STRING url - url of api to hit
 - *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
 - *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
 
-POST
+POST, PUT, HEAD
 
 Fetchster.post(url, data, options, errorHandler)
-- *required* STRING url - url of api to hit
-- *required* OBJECT data - object that contains all the information you want to send on the post body
-- *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
-- *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
-
-PUT
-
 Fetchster.put(url, data, options, errorHandler)
+Fetchster.head(url,data, options, errorHandler)
+
 - *required* STRING url - url of api to hit
 - *required* OBJECT data - object that contains all the information you want to send on the post body
 - *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
 - *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
 
-DELETE
-
-Fetchster.delete(url, options, errorHandler)
-- *required* STRING url - url of api to hit
-- *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
-- *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
-
-HEAD
-
-Fetchster.head(url, options, errorHandler)
-- *required* STRING url - url of api to hit
-- *required* OBJECT data - object that contains all the information you want to send on the post body
-- *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
-- *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
