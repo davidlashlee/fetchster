@@ -28,7 +28,7 @@ Fetchster.seralize(queryParams)
 
 ## http methods
 
-GET, DELETE
+GET, HEAD
 
 ```js
 ...
@@ -39,18 +39,18 @@ GET, DELETE
 ```js
  Fetchster = require('fetchster')
 
- Fetchster.delete('http://someapi.org/posts/3').then((response) => {console.log(response)})
+ Fetchster.head('http://someapi.org/posts/3').then((response) => {console.log(response)})
 ```
 
 Fetchster.get(url, options, errorHandler)
 
-Fetchster.delete(url, options, errorHandler)
+Fetchster.head(url, options, errorHandler)
 
 - *required* STRING url - url of api to hit
-- *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
+- *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}, see options section for details.
 - *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
 
-POST, PUT, HEAD
+POST, PUT, DELETE
 
 ```js
  ...
@@ -72,10 +72,22 @@ Fetchster.post(url, data, options, errorHandler)
 
 Fetchster.put(url, data, options, errorHandler)
 
-Fetchster.head(url,data, options, errorHandler)
+Fetchster.delete(url,data, options, errorHandler)
 
 - *required* STRING url - url of api to hit
 - *required* OBJECT data - object that contains all the information you want to send on the post body
-- *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}
+- *optional* OBJECT options - contains configuration defaults to {headers: 'Content-Type': 'application/json'}}, see options section for details.
 - *optional* FUNCTION errorHandler - function that requires 1 param of err which contains the error object, if not supplied this defaults to console.error(err)
+
+## Options
+```js
+{
+  headers: //Any headers you want to add to your request, contained within a Headers object or ByteString.
+  mode: // The mode you want to use for the request, e.g., cors, no-cors, or same-origin.
+  credentails: //The request credentials you want to use for the request: omit, same-origin, or include. To automatically send cookies for the current domain, this option must be provided.
+  catche: //The cache mode you want to use for the request: default, no-store, reload, no-cache, force-cache, or only-if-cached.
+}
+```
+
+fetch options [documentation](https://developer.mozilla.org/en-US/docs/Web/API/GlobalFetch/fetch) borrowed from Mozilla Contributors
 
